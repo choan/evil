@@ -594,10 +594,9 @@ RETURN-TYPE is non-nil."
             ;; Make linewise operator shortcuts. E.g., "d" yields the
             ;; shortcut "dd", and "g?" yields shortcuts "g??" and "g?g?".
             (let ((keys (nth 2 (evil-extract-count (this-command-keys)))))
-              (setq keys (listify-key-sequence keys))
-              (dotimes (var (length keys))
+              (cl-loop for keys on (listify-key-sequence keys) do
                 (define-key evil-operator-shortcut-map
-                  (vconcat (nthcdr var keys)) #'evil-line-or-visual-line)))
+                  (vconcat keys) #'evil-line-or-visual-line)))
             ;; read motion from keyboard
             (setq command (evil-read-motion motion)
                   motion (nth 0 command)

@@ -1,4 +1,4 @@
-;;; evil.el --- Extensible Vi layer for Emacs  -*- lexical-binding: t; -*-
+;;; evil.el --- Extensible vi layer for Emacs  -*- lexical-binding: t; -*-
 
 ;; The following list of authors was kept up to date until the beginning of
 ;; 2017, when evil moved under new maintainers. For authors since then, please

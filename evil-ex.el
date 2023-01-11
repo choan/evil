@@ -1137,8 +1137,7 @@ The following symbols have reserved meanings within a grammar:
        ;; sequence
        (t
         (setq func (or func 'list))
-        (let (;; (last (car-safe (last rules)))
-              current results rule)
+        (let (current results rule)
           (catch 'done
             (while rules
               (setq rule (pop rules)

@@ -177,7 +177,7 @@ To enable Evil globally, do (evil-mode)."
   ;; the `evil--fundamental-mode' alias, sidestepping the restriction.
   (if evil-mode
       (progn
-        (and (eval-when-compile (version< emacs-version "26.1"))
+        (and (eval-when-compile (< emacs-major-version 26))
              (eq (default-value 'major-mode) #'fundamental-mode)
              (setq-default major-mode #'evil--fundamental-mode))
         (ad-enable-regexp "^evil")
